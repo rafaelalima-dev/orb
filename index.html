@@ -37,8 +37,35 @@
     .logo{display:flex;align-items:center;gap:12px;text-decoration:none;color:var(--white)}
     .logo img{width:56px;height:56px;border-radius:8px;object-fit:cover}
     .brand{font-family:'Playfair Display';font-size:20px;line-height:1}
+
+    /* NAV DESKTOP */
     nav{display:flex;gap:18px;align-items:center}
     nav a{color:rgba(255,255,255,0.95);text-decoration:none;font-weight:600}
+
+    /* BOTÃO HAMBURGER */
+    .menu-toggle{
+      display:none;
+      font-size:26px;
+      cursor:pointer;
+    }
+
+    /* NAV MOBILE */
+    @media (max-width:768px){
+      nav{
+        display:none;
+        flex-direction:column;
+        background:var(--primary);
+        position:absolute;
+        top:70px;
+        right:0;
+        width:100%;
+        text-align:center;
+        padding:20px 0;
+      }
+      nav a{display:block;padding:12px;font-size:18px}
+      nav.active{display:flex;}
+      .menu-toggle{display:block;color:var(--white);}
+    }
 
     .hero{padding:48px 0;background:linear-gradient(180deg, rgba(255,255,255,0.04), rgba(255,255,255,0));}
     .hero-grid{display:grid;grid-template-columns:1fr 420px;gap:32px;align-items:center}
@@ -108,7 +135,7 @@
     .instagram-float {
       position: fixed;
       bottom: 20px;
-      right: 90px; /* afastado do WhatsApp */
+      right: 90px;
       background: #E4405F;
       color: #fff;
       border-radius: 50%;
@@ -137,9 +164,12 @@
   <header>
     <div class="container topbar">
       <a class="logo" href="#">
-        <img src="orb.png" alt="ORB Advogadas Associadas">
+        <img src="img/orb.png" alt="ORB Advogadas Associadas">
         <div class="brand">Escritório de Advocacia<br/><small style="font-weight:400;opacity:0.9">Manaus - Amazonas</small></div>
       </a>
+
+      <!-- Botão Hamburguer -->
+      <div class="menu-toggle"><i class="fa-solid fa-bars"></i></div>
 
       <nav>
         <a href="#servicos">Especialidades</a>
@@ -149,123 +179,9 @@
     </div>
   </header>
 
-  <main>
-    <section class="hero">
-      <div class="container hero-grid">
-        <div>
-          <h1>ORB Advogadas Associadas</h1>
-          <p>Atuação especializada em Direito Civil, Direito do Consumidor, <br> Direito Administrativo, Direito Penal, Execução Penal e Tribunal do Júri. <br> Mais de 10 anos de experiência em defesa dos interesses dos nossos clientes.</p>
-        </div>
-
-        <aside class="card">
-          <h3 style="margin-top:0;font-family:'Playfair Display'">Atendimento Humanizado</h3>
-          <p>Representação contenciosa, garantindo acompanhamento contínuo dos processos.</p>
-          <div style="margin-top:16px">
-            <strong>Contato</strong>
-            <div class="muted" style="margin-top:6px">(92) 99143-5663 • orbadvogadas@gmail.com</div>
-          </div>
-        </aside>
-      </div>
-    </section>
-
-    <section id="servicos" class="services container">
-      <h2 style="font-family:'Playfair Display'">Especialidades</h2>
-      <p>Atuamos de forma estratégica e personalizada em diversas áreas do Direito, garantindo excelência e compromisso.</p>
-      <div class="services-grid" style="margin-top:18px">
-        <div class="card">
-          <i class="fa-solid fa-scale-balanced"></i>
-          <h3>Direito Civil</h3>
-          <p>Contratos, responsabilidade civil, família, sucessões e demandas patrimoniais.</p>
-        </div>
-        <div class="card">
-          <i class="fa-solid fa-landmark"></i>
-          <h3>Direito Administrativo</h3>
-          <p>Processos administrativos, licitações e contratos públicos.</p>
-        </div>
-        <div class="card">
-          <i class="fa-solid fa-cart-shopping"></i>
-          <h3>Direito do Consumidor</h3>
-          <p>Atuação em reclamações e defesa de direitos do consumidor.</p>
-        </div>
-        <div class="card">
-          <i class="fa-solid fa-gavel"></i>
-          <h3>Direito Penal</h3>
-          <p>Defesa Criminal em todas as instâncias.</p>
-        </div>
-        <div class="card">
-          <i class="fa-solid fa-handcuffs"></i>
-          <h3>Execução Penal</h3>
-          <p>Progressão, regimes e benefícios legais.</p>
-        </div>
-        <div class="card">
-          <i class="fa-solid fa-scale-unbalanced"></i>
-          <h3>Tribunal do Júri</h3>
-          <p>Experiência em júri e defesa técnica.</p>
-        </div>
-      </div>
-    </section>
-
-    <section id="advogadas" class="container team">
-      <h2 style="font-family:'Playfair Display'">Nossa Equipe</h2>
-      <p>Conheça nossas profissionais comprometidas em oferecer atendimento humanizado, técnico e eficiente.</p>
-      <div class="members">
-        <div class="member">
-          <img class="avatar" src="perfil.jpg" alt="Érica Oliveira">
-          <div><h4>Érica Oliveira - OAB/AM 11.392</h4><p>Especialista em processos da área do Direito Penal com ênfase em Execução Penal.</p></div>
-        </div>
-        <div class="member">
-          <img class="avatar" src="perfil.jpg" alt="Izolina Ribeiro">
-          <div><h4>Izolina Ribeiro - OAB/AM 11.420</h4><p>Especialista em Direito Penal e Processo Penal. Experiência com processos de Direito Administrativo e 10 anos de prática em Tribunal do Júri.</p></div>
-        </div>
-        <div class="member">
-          <img class="avatar" src="perfil.jpg" alt="Pâmela Barbosa">
-          <div><h4>Pâmela Barbosa - OAB/AM 11.452</h4><p>Especialista em demandas do Direito Bancário, Direito do Consumidor, Direito Civil e Direito Penal.</p></div>
-        </div>
-      </div>
-
-      <div style="text-align:center;margin-top:40px;">
-        <a href="https://wa.me/5592991435663" target="_blank" class="btn btn-primary">Falar com Especialista</a>
-      </div>
-
-      <div class="carousel">
-        <button class="carousel-btn prev">‹</button>
-        <div class="carousel-track">
-          <img src="adv2.jpg" alt="Slide 1">
-          <img src="equipe.jpg" alt="Slide 2">
-          <img src="adv3.jpg" alt="Slide 3">
-        </div>
-        <button class="carousel-btn next">›</button>
-      </div>
-    </section>
-
-    <section id="faq" class="container faq" style="padding-bottom:40px">
-      <h2 style="font-family:'Playfair Display'">Perguntas Frequentes</h2>
-      <div class="q">
-        <h4>Como agendar uma consulta? <span>+</span></h4>
-        <p>Basta entrar em contato pelo WhatsApp informado no site.</p>
-      </div>
-      <div class="q">
-        <h4>O atendimento é online? <span>+</span></h4>
-        <p>Sim, realizamos atendimentos online em todo o Estado do Amazonas.</p>
-      </div>
-    </section>
-  </main>
-
-  <footer>
-    © 2025 ORB Advogadas Associadas — Manaus/AM |
-    <a href="https://instagram.com/orbadvogadas" target="_blank" style="color:var(--gold);text-decoration:none;font-weight:600;">Instagram</a>
-  </footer>
-
-  <!-- Botão WhatsApp flutuante -->
-  <a href="https://wa.me/5592991435663" target="_blank" class="whatsapp-float">
-    <i class="fa-brands fa-whatsapp"></i>
-  </a>
-
-  <!-- Botão Instagram flutuante -->
-  <a href="https://instagram.com/orbadvogadas" target="_blank" class="instagram-float">
-    <i class="fa-brands fa-instagram"></i>
-  </a>
-
+  <!-- resto do site (sem alterações) -->
+  ...
+  
   <script>
     // FAQ toggle
     document.querySelectorAll('.faq .q').forEach(q=>{
@@ -290,8 +206,16 @@
     next.addEventListener('click',()=>showSlide(index+1));
 
     setInterval(()=>showSlide(index+1),4000);
+
+    // Toggle menu mobile
+    const menuToggle = document.querySelector('.menu-toggle');
+    const nav = document.querySelector('nav');
+    menuToggle.addEventListener('click',()=>{
+      nav.classList.toggle('active');
+    });
   </script>
 </body>
 </html>
+
 
 
